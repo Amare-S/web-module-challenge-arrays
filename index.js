@@ -87,11 +87,11 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(array){
-addFlavors('Cherry Garcia'){
-return array;
+function addFlavor(array, str){
+ array.unshift(str);
+ return array;
 }
-console.log(originalFlavors);
+console.log(addFlavor(originalFlavors, "Rainbow Sherbert"));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -104,8 +104,9 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
-   /*your code here*/
+function removeLastFlavor(array){
+  array.pop();
+  return array;
 }
 
 
@@ -125,7 +126,7 @@ function getFlavorByIndex(array, index){
     return array[index];
 }
 
-console.log('task 5:',getFlavorByIndex(originalFlavors, 3));
+console.log('task 5:', getFlavorByIndex(originalFlavors, 3));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -143,8 +144,10 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+function removeFlavorByName(array, str){
+    let x = array.indexOf(str);
+    array.splice(x, 1);
+    return array;
 }
 
 
@@ -169,8 +172,15 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
+function filterByWord(array, string){
+    let filteredArray = [];
+    for(let i = 0; i < array.length; i++ ){
+        if( array[ i ].includes( string )){
+            filteredArray.push( array[ i ] );
+        }
+        
+    }
+    return filteredArray;
 }
 
 
